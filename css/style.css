@@ -1,0 +1,315 @@
+#main_body_landing {
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: lightgray
+}
+
+.landing_card {
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+#main_body {
+    width: 70%;
+    margin: auto;
+}
+
+#flag {
+    margin: 0.25em;
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+#flag_index {
+    margin: 0.5em;
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    padding: 3px;
+    border: solid 1px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+/* SLIDER
+--------- */
+#slider-container {
+    overflow: hidden;
+    height: 30vh;
+}
+
+#slider {
+    background: url("../img/bg-slider.png") repeat-x;
+    background-size: 250vh;
+    height: 300px;
+    width: 7500px;
+    animation: slide 90s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-2500px, 0, 0);
+    }
+}
+
+
+/* PROFILE PIC
+-------------- */
+#profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px blue solid;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+
+/* HOME PAGE LOGOS
+------------------ */
+#logos {
+    width: auto;
+    height: 40px;
+    object-fit: cover;
+    margin: .5em;
+}
+
+#logos_projects_page {
+    width: auto;
+    height: 17px;
+}
+
+#logos_in_project {
+    width: auto;
+    height: 40px;
+    object-fit: cover;
+    margin: .5em;
+}
+
+#logos_landing {
+    width: auto;
+    height: 45px;
+    object-fit: cover;
+    margin: .5em;
+}
+
+
+/* HOME PAGE PROJECTS LOGOS
+--------------------------- */
+#logos_projects {
+    width: auto;
+    height: 80px;
+}
+
+.outer {
+    justify-content: space-between;
+}
+
+.button_projects {
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin: .75em;
+}
+
+
+/* TIMELINE
+----------- */
+.main-timeline {
+    /* timeline (vertical ruler) */
+    position: relative;
+}
+
+.main-timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #939597;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline {
+    /* Container around content */
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline::after {
+    /* The circles on the timeline */
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -13px;
+    background-color: #939597;
+    border: 5px solid #f5df4d;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    /* Place the container to the left */
+    padding: 0px 40px 20px 0px;
+    left: 0;
+}
+
+.right {
+    /* Place the container to the right */
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+}
+
+.left::before {
+    /* Arrows of left container -> */
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.right::before {
+    /* Arrows of right container <- */
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.right::after {
+    /* Fix the circle for containers on the right side */
+    left: -12px;
+}
+
+
+/* UFCD CARDS
+------------- */
+.ufcd_button {
+    width: auto;
+    display: inline;
+}
+
+.ufcd_code {
+    display: inline;
+    font-size: small;
+}
+
+@media (max-width: 1500px) {
+
+    #main_body {
+        width: 95%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 992px) {
+
+    #main_body {
+        width: 95%;
+        margin: auto;
+    }
+
+    /* Place the timelime to the left */
+    .main-timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .timeline {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 5px;
+        font-size: small;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 18px;
+    }
+
+    .left::before {
+        right: auto;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+}
+
+/*  carrousel img
+----------------- */
+.carousel-item img {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.card {
+    border: solid 1px gray;
+}
+
+.alert {
+    border: solid 1px gray;
+}
+
+.card-footer {
+    text-align: right;
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+/* other projects
+----------------- */
+
+#otherProjects img {
+
+    width: 100%;
+    border: solid 1px;
+    border-radius: 5px
+}
+
+#otherProjects p {
+    font-size: x-small;
+    text-align: center;
+}
+
+
+
+/* -------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
